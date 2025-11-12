@@ -1,0 +1,29 @@
+# Core AI frameworks
+langchain>=0.3.0
+langchain-core>=0.3.5
+langchain-community>=0.3.2
+langgraph>=0.1.9
+
+# LLM & embeddings
+openai>=1.45.0
+tiktoken>=0.8.0
+
+# Vector database for RAG
+chromadb>=0.5.5
+
+# Utilities and tools
+python-dotenv>=1.0.1
+arxiv>=2.1.0
+requests>=2.32.3
+
+# Web UI (frontend)
+streamlit>=1.38.0
+
+# Development tools
+jupyter>=1.1.1
+flake8>=7.1.1
+pytest>=8.3.3
+
+# Optional extras (text processing, formatting)
+beautifulsoup4>=4.12.3
+pandas>=2.2.3
