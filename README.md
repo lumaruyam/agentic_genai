@@ -4,6 +4,14 @@ An **agentic AI assistant** designed to help researchers, students, and academic
 
 ---
 
+## Contributors
+
+- Wei-Ling Hung
+- Luli Maruyama
+- Yushu Gong
+
+---
+
 ## 🧩 Problem Statement
 
 Researchers often face two major challenges:
