@@ -1,4 +1,3 @@
-````markdown
 # 🎓 Academic Research Assistant
 
 An **agentic AI assistant** designed to help researchers, students, and academics navigate large volumes of scholarly content. Upload your documents, ask questions, and receive AI-guided answers with sources—all in one intuitive interface powered by Streamlit.
@@ -16,7 +15,7 @@ Current tools either provide raw search results or generate text without human-i
 
 ---
 
-## 🌟 Why This Matters
+## Why This Matters
 
 - **Efficiency**: Saves hours of manual literature review and note-taking.
 - **Accuracy**: Incorporates human-in-the-loop (HITL) feedback to ensure drafts meet academic standards.
@@ -103,10 +102,8 @@ streamlit run app.py
 
 ## 💡 Future Improvements
 
-* Multi-language document support
 * Advanced citation formatting (APA, MLA)
 * Integration with more scholarly databases (PubMed, IEEE, etc.)
-* Collaboration features for research teams
 
 ---
 
