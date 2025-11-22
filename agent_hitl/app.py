@@ -1,4 +1,4 @@
-#academic_assistant.py
+#app.py
 import streamlit as st
 import os
 from main import orchestrate_agent, add_document_to_vectordb
