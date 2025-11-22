@@ -99,13 +99,13 @@ The **agent_wo_hitl** directory is fully automated and does not involve human fe
 
 ---
 
-### 5. Upload documents and begin querying
+## 5. Upload documents and begin querying
 
 Use the sidebar interface to upload PDFs/TXT files.
 
 ---
 
-### 6. Langfuse Tracking
+## 6. Langfuse Tracking
 
 We use **[Langfuse](https://www.langfuse.com/)** to monitor and track AI behavior and human-in-the-loop interactions.
 
