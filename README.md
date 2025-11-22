@@ -105,10 +105,6 @@ Use the sidebar interface to upload PDFs/TXT files.
 
 ---
 
-Absolutely! Here’s a **concise Langfuse section** ready for your README.md:
-
----
-
 ## 6. Langfuse Tracking
 
 We use **[Langfuse](https://www.langfuse.com/)** to monitor and track AI behavior and human-in-the-loop interactions.
@@ -133,8 +129,6 @@ lf_client.track("ai_response", properties={
     "feedback": final_state.get("feedback")
 })
 ```
-
-> Tracks workflow stages, AI outputs, and HITL feedback for auditing and improvement.
 
 ---
 
@@ -192,7 +186,7 @@ graph TD
 │   ├── app.py                  # Streamlit UI without HITL
 │   └── main.py                 # Core pipeline logic
 ```
-> **Note:** Uploads and vectorstore folders are handled inside each agent directory.
+**Note:** Uploads and vectorstore folders are handled inside each agent directory.
 
 ---
 
