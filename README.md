@@ -68,15 +68,73 @@ or create a `.env` file:
 OPENAI_API_KEY=YOUR_KEY_HERE
 ```
 
-### 3. Run the Streamlit app
+## 3. Run the Streamlit app
+
+### For either agent:
 
 ```bash
-streamlit run academic_assistant.py
+cd agent_hitl
+streamlit run app.py
 ```
 
-### 4. Upload documents and begin querying
+or
 
-Use the sidebar interface to upload PDFs/TXT/DOCX files.
+```bash
+cd agent_wo_hitl
+streamlit run app.py
+```
+
+> Both directories have `app.py` and `main.py`. Streamlit uses `app.py` as the entry point for the web interface.
+
+---
+
+## 4. Human-in-the-Loop (HITL) testing
+
+The **agent_hitl** directory contains `backend_agent.ipynb`:
+
+* Human-in-the-loop logic is implemented **in the notebook** (backend) rather than the frontend.
+* You can test HITL functionality by running the **last cell** in `backend_agent.ipynb`.
+
+The **agent_wo_hitl** directory is fully automated and does not involve human feedback.
+
+---
+
+### 5. Upload documents and begin querying
+
+Use the sidebar interface to upload PDFs/TXT files.
+
+---
+
+Absolutely! Here’s a **concise Langfuse section** ready for your README.md:
+
+---
+
+## 6. Langfuse Tracking
+
+We use **[Langfuse](https://www.langfuse.com/)** to monitor and track AI behavior and human-in-the-loop interactions.
+
+* **User queries:** Logged with timestamp, session ID, and workflow stage.
+* **AI responses:** Drafts and final answers tracked along with any HITL feedback.
+* **Document sources:** Context documents used in responses are recorded for traceability.
+
+**Example usage in `app.py`:**
+
+```python
+from langfuse import Client
+lf_client = Client(api_key=os.environ.get("LANGFUSE_API_KEY"))
+
+lf_client.track("user_query", properties={
+    "query": user_query,
+    "stage": st.session_state.get("current_action")
+})
+
+lf_client.track("ai_response", properties={
+    "response": final_state.get("draft") or final_state.get("final"),
+    "feedback": final_state.get("feedback")
+})
+```
+
+> Tracks workflow stages, AI outputs, and HITL feedback for auditing and improvement.
 
 ---
 
@@ -124,15 +182,17 @@ graph TD
 
 ```
 .
-├── app.py                     # Streamlit UI
-├── main.py                    # Core agent pipeline and graph logic
-├── academic_assistant.py      # Web interface logic
-├── notebooks/
-│   ├── uploads/               # User-uploaded documents
-│   └── vectorstore/           # Persistent embeddings DB
+├── README.md
 ├── requirements.txt
-└── README.md
+├── agent_hitl/
+│   ├── app.py                  # Streamlit UI for HITL
+│   ├── backend_agent.ipynb     # Notebook implementing human-in-the-loop
+│   └── main.py                 # Core pipeline logic
+├── agent_wo_hitl/
+│   ├── app.py                  # Streamlit UI without HITL
+│   └── main.py                 # Core pipeline logic
 ```
+> **Note:** Uploads and vectorstore folders are handled inside each agent directory.
 
 ---
 
