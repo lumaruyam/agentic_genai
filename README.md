@@ -105,7 +105,7 @@ Use the sidebar interface to upload PDFs/TXT files.
 
 ---
 
-## 6. Langfuse Tracking
+### 6. Langfuse Tracking
 
 We use **[Langfuse](https://www.langfuse.com/)** to monitor and track AI behavior and human-in-the-loop interactions.
 
